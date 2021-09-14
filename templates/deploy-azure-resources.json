@@ -69,6 +69,24 @@
             "metadata": {
                 "description": "サブネット アドレス範囲"
             }
+        },
+        "virtualMachineName": {
+            "type": "string",
+            "metadata": {
+                "description": "仮想マシン名"
+            }
+        },
+        "adminUserName": {
+            "type": "string",
+            "metadata": {
+                "description": "ローカル管理者"
+            }
+        },
+        "adminPassword": {
+            "type": "securestring",
+            "metadata": {
+                "description": "パスワード"
+            }
         }
     },
     "functions": [],
@@ -207,6 +225,53 @@
                     }
                 }
             }
+        },
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2020-10-01",
+            "name": "linkedTemplate-VirtualMachine",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "https://raw.githubusercontent.com/hiroyay-ms/Azure-Resources/main/templates/deploy-windows-vm.json",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "virtualNetworkName": {
+                        "value": "[parameters('virtualNetworkName')]"
+                    },
+                    "subnetName": {
+                        "value": "[parameters('subnetName1')]"
+                    },
+                    "vnetResourceGroup": {
+                        "value": "[resourceGroup().name]"
+                    },
+                    "virtualMachineName": {
+                        "value": "[parameters('virtualMachineName')]"
+                    },
+                    "osVersion": {
+                        "value": "2019-Datacenter-smalldisk"
+                    },
+                    "machineSize": {
+                        "value": "Standard_B2ms"
+                    },
+                    "storageType": {
+                        "value": "StandardSSD_LRS"
+                    },
+                    "adminUserName": {
+                        "value": "[parameters('adminUserName')]"
+                    },
+                    "adminPassword": {
+                        "value": "[parameters('adminPassword')]"
+                    },
+                    "publicIPAddress": {
+                        "value": true
+                    }
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Resources/deployments', 'linkedTemplate-VirtualNetwork')]"
+            ]
         }
     ],
     "outputs": {}
