@@ -1,0 +1,213 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "storageAccountName": {
+            "type": "string",
+            "metadata": {
+                "description": "ストレージ アカウント名"
+            }
+        },
+        "sqlServerName": {
+            "type": "string",
+            "metadata": {
+                "description": "SQL Server 名"
+            }
+        },
+        "sqlAdministratorLogin": {
+            "type": "string",
+            "metadata": {
+                "description": "サーバー管理者"
+            }
+        },
+        "sqlAdministratorPassword": {
+            "type": "securestring",
+            "metadata": {
+                "description": "パスワード"
+            }
+        },
+        "dataFactoryName": {
+            "type": "string",
+            "metadata": {
+                "description": "Data Factory 名"
+            }
+        },
+        "virtualNetworkName": {
+            "type": "string",
+            "metadata": {
+                "description": "仮想ネットワーク名"
+            }
+        },
+        "addressPrefix": {
+            "type": "string",
+            "metadata": {
+                "description": "IPv4 アドレス空間"
+            }
+        },
+        "subnetName1": {
+            "type": "string",
+            "defaultValue": "Subnet-1",
+            "metadata": {
+                "description": "サブネットの名前"
+            }
+        },
+        "subnetPrefix1": {
+            "type": "string",
+            "metadata": {
+                "description": "サブネット アドレス範囲"
+            }
+        },
+        "subnetName2": {
+            "type": "string",
+            "defaultValue": "Subnet-2",
+            "metadata": {
+                "description": "サブネットの名前"
+            }
+        },
+        "subnetPrefix2": {
+            "type": "string",
+            "metadata": {
+                "description": "サブネット アドレス範囲"
+            }
+        }
+    },
+    "functions": [],
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2020-10-01",
+            "name": "linkedTemplate-StorageAccount",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "https://raw.githubusercontent.com/hiroyay-ms/Azure-Resources/main/templates/deploy-storage-account.json",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "storageAccountName": {
+                        "value": "[parameters('storageAccountName')]"
+                    },
+                    "sku": {
+                        "value": "Standard_LRS"
+                    },
+                    "accessTier": {
+                        "value": "Hot"
+                    },
+                    "isContainerRestoreEnabled": {
+                        "value": false
+                    },
+                    "isBlobSoftDeleteEnabled": {
+                        "value": false
+                    },
+                    "isContainerSoftDeleteEnabled": {
+                        "value": false
+                    },
+                    "isVersioningEnabled": {
+                        "value": false
+                    },
+                    "changeFeed": {
+                        "value": false
+                    }
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2020-10-01",
+            "name": "linkedTemplate-SQLDatabase",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "https://raw.githubusercontent.com/hiroyay-ms/Azure-Resources/main/templates/deploy-sqldatabase-generalpurpose.json",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "sqlServerName": {
+                        "value": "[parameters('sqlServerName')]"
+                    },
+                    "sqlAdministratorLogin": {
+                        "value": "[parameters('sqlAdministratorLogin')]"
+                    },
+                    "sqlAdministratorPassword": {
+                        "value": "[parameters('sqlAdministratorPassword')]"
+                    },
+                    "skuName": {
+                        "value": "GP_S_Gen5_1"
+                    },
+                    "databaseName": {
+                        "value": "ResellerSalesDW"
+                    },
+                    "collation": {
+                        "value": "SQL_Latin1_General_CP1_CI_AS"
+                    },
+                    "backupStorage": {
+                        "value": "Local"
+                    }
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2020-10-01",
+            "name": "linkedTeamplate-DataFactory",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "https://raw.githubusercontent.com/hiroyay-ms/Azure-Resources/main/templates/deploy-data-factory.json",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "name": {
+                        "value": "[parameters('dataFactoryName')]"
+                    },
+                    "vnetEnables": {
+                        "value": false
+                    },
+                    "publicNetworkAccess": {
+                        "value": true
+                    },
+                    "gitConfigureLater": {
+                        "value": true
+                    }
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2020-10-01",
+            "name": "linkedTemplate-VirtualNetwork",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "https://raw.githubusercontent.com/hiroyay-ms/Azure-Resources/main/templates/deploy-vnet.json",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "virtualNetworkName": {
+                        "value": "[parameters('virtualNetworkName')]"
+                    },
+                    "location": {
+                        "value": "[resourceGroup().location]"
+                    },
+                    "addressPrefix": {
+                        "value": "[parameters('addressPrefix')]"
+                    },
+                    "subnetName1": {
+                        "value": "[parameters('subnetName1')]"
+                    },
+                    "subnetPrefix1": {
+                        "value": "[parameters('subnetPrefix1')]"
+                    },
+                    "subnetName2": {
+                        "value": "[parameters('subnetName2')]"
+                    },
+                    "subnetPrefix2": {
+                        "value": "[parameters('subnetPrefix2')]"
+                    }
+                }
+            }
+        }
+    ],
+    "outputs": {}
+}
