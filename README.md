@@ -104,7 +104,7 @@
 
     - **パブリック アクセス レベル**: プライベート（匿名アクセスはありません）
 
-      <img src="images/createContainer.png" />
+      <img src="./images/createContainer.png" />
 
   - 同様の操作でもう１つコンテナーを作成
 
@@ -114,9 +114,9 @@
 
   - ダウンロードしたコンテンツ内の Database フォルダーの **ResellerSales.bacpac** ファイルをアップロード
 
-    <img src="images/uploadBlob1.png" />
+    <img src="./images/uploadBlob1.png" />
 
-    <img src="images/blobContainer1.png" />
+    <img src="./images/blobContainer1.png" />
 
   - もう片方のコンテナーをアクセスし、同様の手順で .csv ファイルをアップロード
 
@@ -124,9 +124,9 @@
 
     ※ 複数ファイルを選択することで一括アップロードが可
 
-    <img src="images/uploadBlob2.png" />
+    <img src="./images/uploadBlob2.png" />
 
-    <img src="images/blobContainer2.png" />
+    <img src="./images/blobContainer2.png" />
 
 - データベースのインポート
 
@@ -134,11 +134,11 @@
 
   - **データベースのインポート** をクリック
 
-    <img src="images/sqlServer.png" />
+    <img src="./images/sqlServer.png" />
 
   - バックアップの選択、データベースの構成を行い、管理者のパスワードを入力
 
-    <img src="images/importDatabase.png" />
+    <img src="./images/importDatabase.png" />
 
     ※ バックアップは先の手順でアップロードした **ResellerSales.bacpac** ファイルを選択
 
@@ -156,7 +156,7 @@
 
     - データの最大サイズ： **5** GB
 
-      <img src="images/sqlDatabase_Compute_Storage.png" />
+      <img src="./images/sqlDatabase_Compute_Storage.png" />
     
   - **OK** をクリックし、データベースのインポートを実行
 
@@ -166,11 +166,11 @@
 
   - **＋ クライアント IP の追加** をクリック
 
-    <img src="images/sqlServer_Firewall.png" />
+    <img src="./images/sqlServer_Firewall.png" />
 
   - 現在のアクセスしている IP アドレスを許可するルールが追加されたことを確認し、**保存** をクリック
 
-    <img src="images/sqlServer_Firewall_Rule.png" />
+    <img src="./images/sqlServer_Firewall_Rule.png" />
 
   - 「サーバーのファイアウォール規則が正常に更新されました」のメッセージを確認し、**OK** をクリック
 
@@ -180,23 +180,23 @@
 
   - **SQL Server 認証** の **ログイン**、**パスワード** を入力し、**OK** をクリック
 
-    <img src="images/sqlDatabase_Login.png" />
+    <img src="./images/sqlDatabase_Login.png" />
 
     ※ 送信で TCP 1433 ポートが許可されている必要があります
 
   - ダウンロードしたコンテンツ内の **Database** フォルダーにある **CreateProductTable.sql** の内容をコピーし貼り付け
 
-    <img src="images/createTable.png" />
+    <img src="./images/createTable.png" />
 
   - **実行** をクリックしテーブルを作成
 
   - 「クエリが成功しました」のメッセージを確認し、画面左の **テーブル** を展開し、テーブルが作成されていることを確認
 
-    <img src="images/queryEditor.png" />
+    <img src="./images/queryEditor.png" />
 
   - 同様の手順で Promotion, Reseller, SalesTerritory, SalesOrder テーブルを作成
 
-    <img src="images/sqlDatabase_tables.png" />
+    <img src="./images/sqlDatabase_tables.png" />
 
 - インポートしたデータベースの確認
 
@@ -208,8 +208,8 @@
 
     **Select Top 1000 Rows** を選択
 
-    <img src="images/queryEditor_select_top1000_row.png" />
+    <img src="./images/queryEditor_select_top1000_row.png" />
 
   - SELECT 句が実行され、結果に登録されているレコードが表示されることを確認
 
-    <img src="images/queryEditor_result.png" />
+    <img src="./images/queryEditor_result.png" />
