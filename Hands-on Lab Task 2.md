@@ -10,10 +10,10 @@
 
 - Open Azure Data Factory Studio の **開く** をクリック
 
-  <img src="images/openDataFactoryStudio.png" />
+  <img src="images/openDataFactoryStudio.PNG" />
 
 - Azure Data Factory Studio が別タブで起動
 
-  <img src="images/dataFactoryStudio.png" />
+  <img src="images/dataFactoryStudio.PNG" />
 
 <br />

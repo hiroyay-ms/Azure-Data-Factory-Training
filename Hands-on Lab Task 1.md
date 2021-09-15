@@ -10,11 +10,11 @@
 
 - Open Azure Data Factory Studio の **開く** をクリック
 
-  <img src="images/openDataFactoryStudio.png" />
+  <img src="images/openDataFactoryStudio.PNG" />
 
 - Azure Data Factory Studio が別タブで起動
 
-  <img src="images/dataFactoryStudio.png" />
+  <img src="images/dataFactoryStudio.PNG" />
 
 <br />
 
@@ -22,11 +22,11 @@
 
 - **管理** メニューの **リンク サービス** を選択し、**＋ 新規** をクリック
 
-  <img src="images/createLinkservice.png" />
+  <img src="images/createLinkservice.PNG" />
 
 - 新しいリンク サービス画面で **Azure BLOB ストレージ** を選択し、**続行** をクリック
 
-  <img src="images/createLinkservice_BLOB_01.png" />
+  <img src="images/createLinkservice_BLOB_01.PNG" />
 
 - Azure BLOB ストレージへのリンク サービスを作成
 
@@ -38,7 +38,7 @@
 
   - ストレージ アカウント名： 事前準備で csv ファイルをアップロードしたストレージを選択
 
-    <img src="images/createLinkservice_BLOB_02.png" />
+    <img src="images/createLinkservice_BLOB_02.PNG" />
 
     ※ **テスト接続** をクリックし、接続が成功することを確認
 
@@ -48,7 +48,7 @@
 
 - 新しいリンク サービスの画面で **Azure SQL Database** を選択し、**続行** をクリック
 
-  <img src="images/createLinkservice_SQL_01.png" />
+  <img src="images/createLinkservice_SQL_01.PNG" />
 
 - Azure SQL Database へのリンク サービスを作成
 
@@ -70,7 +70,7 @@
 
   - パスワード： 指定したアカウントのパスワード
 
-    <img src="images/createLinkservice_SQL_02.png" />
+    <img src="images/createLinkservice_SQL_02.PNG" />
 
     ※ **テスト接続** をクリックし、接続が成功することを確認
 
@@ -78,7 +78,7 @@
 
 - 同様の手順で ResellerSalesDW へのリンク サービスを作成
 
-  <img src="images/listLinkservice.png" />
+  <img src="images/listLinkservice.PNG" />
 
 <br />
 
@@ -88,33 +88,33 @@
 
   **パイプライン** を選択
 
-  <img src="images/createPipeline.png" />
+  <img src="images/createPipeline.PNG" />
 
 - 画面右のプロパティでパイプライン名を入力
 
-  <img src="images/pipeLine_Property.png" />
+  <img src="images/pipeLine_Property.PNG" />
 
 - **アクティビティ** - **移動と変換** にある **データ フロー** をデザイナー画面へドラッグ＆ドロップして配置
 
-  <img src="images/deployDataFlow.png" />
+  <img src="images/deployDataFlow.PNG" />
 
 - **設定** タブの **＋ 新規** をクリック
 
-  <img src="images/dataFlow_Settings.png" />
+  <img src="images/dataFlow_Settings.PNG" />
 
 - データ フローのデザイン画面が表示
 
 - **ソースの追加** をクリック
 
-  <img src="images/createDataFlow_01.png" />
+  <img src="images/createDataFlow_01.PNG" />
 
 - **ソースの設定** の **データセット** で **＋ 新規** をクリック
 
-  <img src="images/createDataSource_01.png" />
+  <img src="images/createDataSource_01.PNG" />
 
 - 新しいデータセットの画面で **Azure SQL Database** を選択し、**続行** をクリック
 
-  <img src="images/newDataSet.png" />
+  <img src="images/newDataSet.PNG" />
 
 - プロパティの設定を行い **作成** をクリック
 
@@ -126,15 +126,15 @@
 
   - スキーマのインポート： 接続またはストアから（既定）
 
-    <img src="images/dataSet_Property.png" />
+    <img src="images/dataSet_Property.PNG" />
 
 - 同様の手順で ProductCategory のデータセットを追加
 
-  <img src="images/addedDataSets.png" />
+  <img src="images/addedDataSets.PNG" />
 
 - **source1** の右下の **＋** アイコンをクリック、表示されるメニューから **結合** を選択
 
-  <img src="images/addJoin_01.png" />
+  <img src="images/addJoin_01.PNG" />
 
 - 結合アクティビティの設定
 
@@ -152,15 +152,15 @@
 
     - 右： ProductCategorykey
 
-    <img src="images/addJoin_02.png" />
+    <img src="images/addJoin_02.PNG" />
 
 - **join1** 右下の **＋** アイコンをクリック、表示されるメニューから **シンク** を選択
 
-  <img src="images/addSink_01.png" />
+  <img src="images/addSink_01.PNG" />
 
 - **シンク** タブの **データセット** の **＋ 新規** をクリック
 
-  <img src="images/sinkSettings.png" />
+  <img src="images/sinkSettings.PNG" />
 
 - 新しいデータセットの画面で **Azure SQL Database** を選択し、**続行** をクリック
 
@@ -168,13 +168,13 @@
 
   ※名前は任意の名前を入力
 
-  <img src="images/dataSet_Property_DW.png" />
+  <img src="images/dataSet_Property_DW.PNG" />
 
 - **マップ** タブを選択
 
   自動マッピングを解除し、マッピングの設定を確認
 
-  <img src="images/dataMapping.png" />
+  <img src="images/dataMapping.PNG" />
 
 <br />
 
@@ -182,11 +182,11 @@
   
   ※ デバッグ中は仮想マシンの費用がかかるため注意が必要
 
-  <img src="images/dataFlow_Debug_02.png" />
+  <img src="images/dataFlow_Debug_02.PNG" />
 
   ※ データのプレビュー
 
-  <img src="images/dataPreview.png" />
+  <img src="images/dataPreview.PNG" />
 
 - パイプラインのデザイン画面を表示
 
@@ -194,11 +194,11 @@
 
   Data flow 1 と接続
 
-  <img src="images/addedSecond_DataFlow.png" />
+  <img src="images/addedSecond_DataFlow.PNG" />
 
 - **設定** タブを開き **データフロー** の **＋ 新規** をクリック
 
-  <img src="images/second_DataFlow_Settings.png" />
+  <img src="images/second_DataFlow_Settings.PNG" />
 
 - デザイン画面で **ソースの追加** をクリックし、データセットを新規作成
 
@@ -208,7 +208,7 @@
 
   - スキーマのインポート： 接続またはストアから
 
-    <img src="images/dataSet_Reseller.png" />
+    <img src="images/dataSet_Reseller.PNG" />
 
 - 同じ手順で Geography テーブルのデータセットを追加
 
@@ -218,7 +218,7 @@
 
   - スキーマのインポート： 接続またはストアから
 
-    <img src="images/dataSet_Geography.png" />
+    <img src="images/dataSet_Geography.PNG" />
 
 - **結合** アクティビティの追加と設定
 
@@ -236,7 +236,7 @@
 
     - 右： Geographykey
 
-    <img src="images/join_Reseller_Geography.png" />
+    <img src="images/join_Reseller_Geography.PNG" />
 
 - **シンク** アクティビティの追加と設定
 
@@ -248,11 +248,11 @@
 
     - テーブル名： **dbo.Reseller**
 
-      <img src="images/sink_DataSet_Reseller.png" />
+      <img src="images/sink_DataSet_Reseller.PNG" />
 
 - ２つめのデータフローが完成
 
-  <img src="images/dataFlow_Reseller.png" />
+  <img src="images/dataFlow_Reseller.PNG" />
 
 - パイプラインのデザイン画面を表示
 
@@ -260,7 +260,7 @@
 
   Data flow 2 と接続
 
-  <img src="images/addedThird_DataFlow.png" />
+  <img src="images/addedThird_DataFlow.PNG" />
 
 - **設定** タブを開き、**データフロー** の **＋ 新規** をクリックし、新しいデータ フローを作成
 
@@ -274,7 +274,7 @@
 
   - スキーマのインポート： 接続またはストアから
 
-    <img src="images/dataSet_Promotion.png" />
+    <img src="images/dataSet_Promotion.PNG" />
 
   - 名前： 任意（英数字のみサポート）
 
@@ -284,11 +284,11 @@
 
   - スキーマのインポート： 接続またはストアから
 
-    <img src="images/dataSet_SalesTerritory.png" />
+    <img src="images/dataSet_SalesTerritory.PNG" />
 
 - **source1** の右下の **＋** アイコンをクリックし、表示されるメニューから **シンク** を選択
 
-  <img src="images/sink_Promotion.png" />
+  <img src="images/sink_Promotion.PNG" />
 
 - **シンク** のデータセットを追加
 
@@ -298,7 +298,7 @@
 
   - テーブル名： **dbo.Promotion**
 
-    <img src="images/sink_DataSet_Promotion.png" />
+    <img src="images/sink_DataSet_Promotion.PNG" />
 
 - 同様の手順で **source2** にも **シンク** アクティビティを接続し、データセットを作成
 
@@ -308,32 +308,32 @@
 
   - テーブル名： **dbo.SalesTerritory**
 
-    <img src="images/sink_DataSet_SalesTerritory.png" />
+    <img src="images/sink_DataSet_SalesTerritory.PNG" />
 
 - ３つめのデータフローが完成
 
-  <img src="images/dataFlow_Promotion_SalesTerritory.png" />
+  <img src="images/dataFlow_Promotion_SalesTerritory.PNG" />
 
 - パイプラインのデザイン画面を表示
 
   **デバッグ** をクリックし、パイプラインをデバッグ実行
 
-  <img src="images/pipeLine_Debug_Start.png" />
+  <img src="images/pipeLine_Debug_Start.PNG" />
 
   ※ メッセージが表示された際は **Integration Runtime を使用する** を選択
 
 - **出力** タブで実行状況を確認
 
-  <img src="images/pipeLine_Debug_Output.png" />
+  <img src="images/pipeLine_Debug_Output.PNG" />
 
 - メガネ アイコンをクリックすることでアクティビティごとの状況を確認
 
-  <img src="images/pipeLine_Debug_Drilldown.png" />
+  <img src="images/pipeLine_Debug_Drilldown.PNG" />
 
 - 各コンポーネントをクリックすることで詳細な状況を確認可
 
-  <img src="images/dataFlow_Status.png" />
+  <img src="images/dataFlow_Status.PNG" />
 
 - パイプラインが正常に終了することを確認
 
-  <img src="images/pipeLine_Debug_Complete.png" />
+  <img src="images/pipeLine_Debug_Complete.PNG" />
