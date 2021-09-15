@@ -16,6 +16,7 @@
         },
         "sqlAdministratorLogin": {
             "type": "string",
+            "defaultValue": "SqlUser",
             "metadata": {
                 "description": "サーバー管理者"
             }
@@ -78,6 +79,7 @@
         },
         "adminUserName": {
             "type": "string",
+            "defaultValue": "AzureUser",
             "metadata": {
                 "description": "ローカル管理者"
             }
