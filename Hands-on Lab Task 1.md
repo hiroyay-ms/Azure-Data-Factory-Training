@@ -1,6 +1,6 @@
 # Azure-Data-Factory-Training
 
-## SQL Database 間のデータ コピー
+## SQL Database 間のデータ フロー
 
 <br />
 
@@ -154,7 +154,7 @@
 
     <img src="images/addJoin_02.PNG" />
 
-- **join1** 右下の **＋** アイコンをクリック、表示されるメニューから **シンク** を選択
+- **結合** アクティビティ右下の **＋** アイコンをクリック、表示されるメニューから **シンク** を選択
 
   <img src="images/addSink_01.PNG" />
 
@@ -196,7 +196,7 @@
 
   <img src="images/addedSecond_DataFlow.PNG" />
 
-- **設定** タブを開き **データフロー** の **＋ 新規** をクリック
+- **設定** タブを表示、 **データフロー** の **＋ 新規** をクリック
 
   <img src="images/second_DataFlow_Settings.PNG" />
 
@@ -262,7 +262,7 @@
 
   <img src="images/addedThird_DataFlow.PNG" />
 
-- **設定** タブを開き、**データフロー** の **＋ 新規** をクリックし、新しいデータ フローを作成
+- **設定** タブを表示、**データフロー** の **＋ 新規** をクリックし、新しいデータ フローを作成
 
 - **ソースの追加** をクリックし、以下２つのデータセットを追加
 
