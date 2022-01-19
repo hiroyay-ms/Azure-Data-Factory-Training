@@ -38,7 +38,7 @@
 
   <img src="images/select_DataSet_source1.PNG" />
 
-- **ソースのオプション** タブを表示、**ワイルドカード パス**のファイル名に **2020??.csv** と入力
+- **ソースのオプション** タブを表示、**ワイルドカード パス**のファイル名に **2021??.csv** と入力
 
   <img src="images/sourceOption_Wildcard_Path.PNG" />
 
@@ -114,7 +114,7 @@
   SELECT MAX(OrderDate) FROM [dbo].[SalesOrder]
   ```
 
-  ※ 2020-12-29 までのデータのみが追加されていることを確認
+  ※ 2021-12-29 までのデータのみが追加されていることを確認
 
 <br />
 
